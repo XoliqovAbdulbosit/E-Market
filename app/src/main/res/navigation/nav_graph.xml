@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.e_market.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.e_market.fragments.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.e_market.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_databaseFragment"
+            app:destination="@id/databaseFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_customersFragment"
+            app:destination="@id/customersFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/databaseFragment"
+        android:name="com.example.e_market.fragments.DatabaseFragment"
+        android:label="fragment_database"
+        tools:layout="@layout/fragment_database">
+        <action
+            android:id="@+id/action_databaseFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
+        <action
+            android:id="@+id/action_databaseFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+        <action
+            android:id="@+id/action_databaseFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.example.e_market.fragments.AddProductFragment"
+        android:label="fragment_add_product"
+        tools:layout="@layout/fragment_add_product">
+        <action
+            android:id="@+id/action_addProductFragment_to_databaseFragment"
+            app:destination="@id/databaseFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.example.e_market.fragments.ProductFragment"
+        android:label="fragment_product"
+        tools:layout="@layout/fragment_product">
+        <action
+            android:id="@+id/action_productFragment_to_databaseFragment"
+            app:destination="@id/databaseFragment" />
+        <action
+            android:id="@+id/action_productFragment_to_editTaskFragment"
+            app:destination="@id/editTaskFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editTaskFragment"
+        android:name="com.example.e_market.fragments.EditTaskFragment"
+        android:label="EditTaskFragment">
+        <action
+            android:id="@+id/action_editTaskFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/customersFragment"
+        android:name="com.example.e_market.fragments.CustomersFragment"
+        android:label="fragment_customers"
+        tools:layout="@layout/fragment_customers">
+        <action
+            android:id="@+id/action_customersFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
+</navigation>
